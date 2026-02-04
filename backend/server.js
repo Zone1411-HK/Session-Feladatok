@@ -27,6 +27,12 @@ app.use(
 router.get('/', (request, response) => {
     response.sendFile(path.join(__dirname, '../frontend/html/index.html'));
 });
+router.get('/masodik', (request, response) => {
+    response.sendFile(path.join(__dirname, '../frontend/html/masodik.html'));
+});
+router.get('/harmadik', (request, response) => {
+    response.sendFile(path.join(__dirname, '../frontend/html/harmadik.html'));
+});
 
 //!API endpoints
 app.use('/', router);

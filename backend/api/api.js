@@ -41,4 +41,29 @@ router.get('/testsql', async (request, response) => {
     }
 });
 
+router.post('/mentes', async (request, response) => {
+    try {
+        const { adat } = request.body;
+        request.session.adat = adat;
+        console.log(adat);
+        response.status(200).json({ success: 'Siker' });
+    } catch (error) {
+        console.log(error);
+    }
+});
+
+router.get('/lekerd', async (request, response) => {
+    if (!request.session.adat) {
+        response.status(500).json({
+            success: false
+        });
+    } else {
+        console.log(request.session.adat);
+        response.status(200).json({
+            success: true,
+            adat: request.session.adat
+        });
+    }
+});
+
 module.exports = router;

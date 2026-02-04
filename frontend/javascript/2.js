@@ -1,18 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('feltolt').addEventListener('click', feladat1);
+    feladat2();
 });
-
-async function feladat1() {
+async function feladat2() {
     try {
-        const adat = document.getElementById('inputText').value;
-        const response = await PostMethodFetch('api/mentes', { adat: adat });
-        console.log(response);
-        window.location = 'masodik';
+        const response = await GetMethodFetch('api/lekerd');
+        document.getElementById('bekezdes').innerText = response.adat;
+        console.log(response.adat);
     } catch (error) {
-        console.log(error.message);
+        console.log(error);
     }
 }
-
 async function GetMethodFetch(url) {
     try {
         const response = await fetch(url);
