@@ -25,13 +25,31 @@ app.use(
 //!Routing
 //?Főoldal:
 router.get('/', (request, response) => {
+    response.sendFile(path.join(__dirname, '../frontend/html/hub.html'));
+});
+router.get('/elsoFeladat', (request, response) => {
     response.sendFile(path.join(__dirname, '../frontend/html/index.html'));
 });
-router.get('/masodik', (request, response) => {
-    response.sendFile(path.join(__dirname, '../frontend/html/masodik.html'));
+router.get('/masodikFeladat', (request, response) => {
+    response.sendFile(path.join(__dirname, '../frontend/html/masodikFeladat.html'));
 });
-router.get('/harmadik', (request, response) => {
-    response.sendFile(path.join(__dirname, '../frontend/html/harmadik.html'));
+router.get('/stats', (request, response) => {
+    response.sendFile(path.join(__dirname, '../frontend/html/stats.html'));
+});
+router.get('/harmadikFeladat', (request, response) => {
+    response.sendFile(path.join(__dirname, '../frontend/html/harmadikFeladat.html'));
+});
+router.get('/display', (request, response) => {
+    response.sendFile(path.join(__dirname, '../frontend/html/display.html'));
+});
+router.get('/negyedikFeladat', (request, response) => {
+    response.sendFile(path.join(__dirname, '../frontend/html/negyedikFeladat.html'));
+});
+router.get('/lekeres', (request, response) => {
+    response.sendFile(path.join(__dirname, '../frontend/html/lekeres.html'));
+});
+router.get('/torles', (request, response) => {
+    response.sendFile(path.join(__dirname, '../frontend/html/torles.html'));
 });
 
 //!API endpoints
